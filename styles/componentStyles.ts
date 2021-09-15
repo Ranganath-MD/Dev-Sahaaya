@@ -3,9 +3,7 @@ export const Button = {
     fontWeight: "bold",
     borderRadius: "base",
     _focus: { boxShadow: "none",  },
-    _active: {
-      transform: "scale(0.98)",
-    }
+    
   },
   sizes: {
     sm: {
@@ -26,6 +24,10 @@ export const Button = {
       color: "white",
       _hover: {
         bg: "linear-gradient( to left,#753a88,#cc2b5e )"
+      },
+      _active: {
+        transform: "scale(0.98)",
+        background: "linear-gradient( to left,#753a88,#cc2b5e )"
       }
     },
   },

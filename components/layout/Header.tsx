@@ -30,7 +30,7 @@ export const Header: React.FC = (props) => {
     <chakra.header
       transition="box-shadow 0.2s, background-color 0.2s"
       pos="sticky"
-      top="0"
+      top="2.5"
       zIndex="3"
       left="0"
       right="0"
