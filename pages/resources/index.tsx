@@ -11,14 +11,13 @@ import {
   Center,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { getAllResources } from "utils/mdx";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response: IResources[] = await (
-    await fetch(`${process.env.BASE_URL}/api/resources`)
-  ).json();
+  const resources = getAllResources();
   return {
     props: {
-      data: response,
+      data: resources,
     },
   };
 };
@@ -34,21 +33,21 @@ const ResourcesTags: NextPage<{ data: IResources[] }> = ({ data }) => {
           return (
             <ResourceLink
               as={Link}
-              href={`/resources/${tag.value}`}
-              key={tag.value}
+              href={`/resources/${tag.data.slug}`}
+              key={tag.data.slug}
               passHref>
               <Box _hover={{ transform: "scale(0.96)", cursor: "pointer" }}>
                 <Center flexDirection="column">
                   <Image
-                    src={`${process.env.CLOUDINARY_URL}/${tag.image}`}
+                    src={`${process.env.CLOUDINARY_URL}/${tag.data.image}`}
                     alt={tag.name}
                     width={75}
                     height={75}
                     placeholder="blur"
-                    blurDataURL={`${process.env.CLOUDINARY_URL}/${tag.image}`}
+                    blurDataURL={`${process.env.CLOUDINARY_URL}/${tag.data.image}`}
                   />
                   <chakra.p fontSize="medium" mt="2.5" textAlign="center">
-                    {tag.name}
+                    {tag.data.name}
                   </chakra.p>
                 </Center>
               </Box>

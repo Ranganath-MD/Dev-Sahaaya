@@ -1,5 +1,6 @@
 interface IResources {
   name: string;
   image: string;
-  value: string;
+  slug: string,
+  content: string
 }
