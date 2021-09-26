@@ -14,7 +14,8 @@ export const Theme = extendTheme({
       },
       li: {
         listStyle: "none"
-      }
+      },
+
     }),
   },
   components: {
