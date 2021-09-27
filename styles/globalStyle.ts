@@ -12,6 +12,10 @@ export const Theme = extendTheme({
         lineHeight: "base",
         fontFamily: "Arvo"
       },
+      li: {
+        listStyle: "none"
+      },
+
     }),
   },
   components: {
