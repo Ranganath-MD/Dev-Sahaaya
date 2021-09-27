@@ -17,7 +17,7 @@ export const H2: React.FC<HeadingProps> = ({ ...props }) => {
       borderBottomColor="inherit"
       borderBottomWidth="thin"
       style={{
-        scrollMarginTop: "6rem"
+        scrollMarginTop: "5rem"
       }}
     />
   );
