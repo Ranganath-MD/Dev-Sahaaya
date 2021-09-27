@@ -30,12 +30,10 @@ type SidebarProps =
 export const Sidebar: React.FC<SidebarProps> = (
   props
 ) => {
-  console.log(props);
   switch (props.variant) {
     case "right":
       return (
         <chakra.div
-          w={["0", "40", "56"]}
           py="8"
           paddingLeft="6"
           borderLeftWidth="thin"
@@ -59,7 +57,9 @@ export const Sidebar: React.FC<SidebarProps> = (
       );
     case "left":
       return (
-        <chakra.div w={["0", "40", "50"]} py="6">
+        <chakra.div
+          py="6"
+        >
           <Heading fontSize="lg">
             Resources
           </Heading>
@@ -70,7 +70,7 @@ export const Sidebar: React.FC<SidebarProps> = (
                   <ListItem key={slug} mt="2">
                     <ChakraLink
                       as={Link}
-                      href={slug}
+                      href={`/resources/${slug}`}
                     >
                       {name}
                     </ChakraLink>

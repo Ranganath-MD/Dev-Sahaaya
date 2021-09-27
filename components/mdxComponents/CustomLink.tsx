@@ -1,8 +1,15 @@
 import { Link } from "@chakra-ui/react";
 import { useColorModeValue } from "@chakra-ui/react";
 
-export const ExternalLink = ({ as, href, ...otherProps }) => {
-  const color = useColorModeValue("#4433ff", "#ED64A6");
+export const ExternalLink = ({
+  as,
+  href,
+  ...otherProps
+}) => {
+  const color = useColorModeValue(
+    "#4433ff",
+    "#76E4F7"
+  );
 
   return (
     <>

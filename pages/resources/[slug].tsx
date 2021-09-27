@@ -40,8 +40,10 @@ const ContentDisplay = ({
         pos="sticky"
         top="4rem"
         h="90vh"
+        paddingRight="6"
         borderRightWidth="thin"
         borderRightColor="inherit"
+        width={["0", "0", "20%"]}
         display={["none", "none", "block"]}
       >
         <Sidebar
@@ -51,8 +53,9 @@ const ContentDisplay = ({
       </chakra.div>
       <chakra.div
         p="6"
+        fontSize="sm"
         fontFamily="serif"
-        minWidth="70%"
+        width={["100%"]}
       >
         <MDXRemote
           {...source}
@@ -63,6 +66,7 @@ const ContentDisplay = ({
         pos="sticky"
         top="4rem"
         h="85vh"
+        width={["0", "0", "30%"]}
         display={["none", "none", "block"]}
       >
         <Sidebar

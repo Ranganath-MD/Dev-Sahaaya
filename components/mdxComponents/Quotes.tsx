@@ -11,6 +11,7 @@ export const Quotes = ({ ...props }) => {
       as="blockquote"
       rounded="4px"
       my="1.5rem"
+      lineHeight="1.5rem"
       {...props}
     />
   );
