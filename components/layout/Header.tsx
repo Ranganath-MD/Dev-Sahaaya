@@ -5,11 +5,13 @@ import {
   HStack,
   Icon,
   IconButton,
-  Link,
+  Link as ChakraLink,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import { siteConfig } from "utils/siteconfig";
+import Link from "next/link";
 
 const GithubIcon = (props: React.ComponentProps<"svg">) => (
   <svg viewBox="0 0 20 20" {...props}>
@@ -39,17 +41,29 @@ export const Header: React.FC = (props) => {
       px={6}
       {...props}
     >
-      <chakra.div height="4rem" mx="auto" maxW="8xl">
-        <Flex w="100%" h="100%" align="center" justify="space-between">
-          <chakra.h1 fontSize="lg" fontWeight="bold">
-            {`{...💻DS}`}
+      <chakra.div
+        height="4rem"
+        mx="auto"
+        maxW="8xl"
+      >
+        <Flex
+          w="100%"
+          h="100%"
+          align="center"
+          justify="space-between"
+        >
+          <chakra.h1
+            fontSize="lg"
+            fontWeight="bold"
+          >
+            <Link href="/">{`{...💻Dev Sahaaya}`}</Link>
           </chakra.h1>
           <Flex>
             <HStack spacing="5">
-              <Link
+              <ChakraLink
                 isExternal
-                aria-label="Go to Dev Sahaaya GitHub page"
-                // href={siteConfig.repo.url}
+                aria-label="Link to Dev Sahaaya GitHub page"
+                href={siteConfig.repo.url}
               >
                 <Icon
                   as={GithubIcon}
@@ -59,7 +73,7 @@ export const Header: React.FC = (props) => {
                   h="5"
                   _hover={{ color: "gray.600" }}
                 />
-              </Link>
+              </ChakraLink>
               <IconButton
                 size="md"
                 fontSize="lg"

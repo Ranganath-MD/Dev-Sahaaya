@@ -9,7 +9,11 @@ import {
 } from "utils/mdx";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import { Alert, chakra, Flex } from "@chakra-ui/react";
+import {
+  Alert,
+  chakra,
+  Flex,
+} from "@chakra-ui/react";
 import Head from "next/head";
 import {
   ExternalLink,
@@ -19,6 +23,7 @@ import {
   MDXListItem,
   Quotes,
 } from "components/mdxComponents";
+import { Seo } from "components/seo/Seo";
 
 const components = {
   a: ExternalLink,
@@ -35,46 +40,49 @@ const ContentDisplay = ({
   resources,
 }: any) => {
   return (
-    <Flex>
-      <chakra.div
-        pos="sticky"
-        top="4rem"
-        h="90vh"
-        paddingRight="6"
-        borderRightWidth="thin"
-        borderRightColor="inherit"
-        width={["0", "0", "20%"]}
-        display={["none", "none", "block"]}
-      >
-        <Sidebar
-          variant="left"
-          resources={resources}
-        />
-      </chakra.div>
-      <chakra.div
-        p="6"
-        fontSize="sm"
-        fontFamily="serif"
-        width={["100%"]}
-      >
-        <MDXRemote
-          {...source}
-          components={components}
-        />
-      </chakra.div>
-      <chakra.div
-        pos="sticky"
-        top="4rem"
-        h="85vh"
-        width={["0", "0", "30%"]}
-        display={["none", "none", "block"]}
-      >
-        <Sidebar
-          variant="right"
-          sections={frontMatter.sections}
-        />
-      </chakra.div>
-    </Flex>
+    <>
+      <Seo title={`${frontMatter.name} resources`} />
+      <Flex>
+        <chakra.div
+          pos="sticky"
+          top="4rem"
+          h="90vh"
+          paddingRight="6"
+          borderRightWidth="thin"
+          borderRightColor="inherit"
+          width={["0", "0", "20%"]}
+          display={["none", "none", "block"]}
+        >
+          <Sidebar
+            variant="left"
+            resources={resources}
+          />
+        </chakra.div>
+        <chakra.div
+          p="6"
+          fontSize="sm"
+          fontFamily="serif"
+          width={["100%"]}
+        >
+          <MDXRemote
+            {...source}
+            components={components}
+          />
+        </chakra.div>
+        <chakra.div
+          pos="sticky"
+          top="4rem"
+          h="85vh"
+          width={["0", "0", "30%"]}
+          display={["none", "none", "block"]}
+        >
+          <Sidebar
+            variant="right"
+            sections={frontMatter.sections}
+          />
+        </chakra.div>
+      </Flex>
+    </>
   );
 };
 
