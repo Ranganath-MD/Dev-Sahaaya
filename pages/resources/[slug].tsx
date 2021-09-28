@@ -60,8 +60,8 @@ const ContentDisplay = ({
         </chakra.div>
         <chakra.div
           p="6"
-          fontSize="sm"
-          fontFamily="serif"
+          fontSize="md"
+          fontFamily="Inter"
           width={["100%"]}
         >
           <MDXRemote
