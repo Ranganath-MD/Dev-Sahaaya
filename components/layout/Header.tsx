@@ -12,8 +12,9 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { siteConfig } from "utils/siteconfig";
-import Link from "next/link";
+// import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
+import Link from "next/link";
 
 const GithubIcon = (props: React.ComponentProps<"svg">) => (
   <svg viewBox="0 0 20 20" {...props}>
@@ -52,29 +53,26 @@ export const Header: React.FC = (props) => {
           justify="space-between"
         >
           <Flex align="center">
-            <ChakraLink href="/" as={Link} passHref>
-              <React.Fragment>
-                <Img
-                  src={`/logo/logo.png`}
-                  width={65}
-                  height={50}
-                  alt="Dev Sahaaya Logo"
-                  cursor="pointer"
-                  style={{
-                    transform: "rotate(-25deg)",
-                  }}
-                />
-                {pathname !== "/" && (
-                  <chakra.h1
-                    fontSize="lg"
-                    fontWeight="bold"
-                    cursor="pointer"
-                  >
-                    Dev Sahaaya
-                  </chakra.h1>
-                )}
-              </React.Fragment>
-            </ChakraLink>
+            <Link href="/" passHref>
+              <Img
+                src={`/logo/logo.png`}
+                width={65}
+                height={50}
+                alt="Dev Sahaaya Logo"
+                cursor="pointer"
+                style={{
+                  transform: "rotate(-25deg)",
+                }}
+              />
+            </Link>
+            {pathname !== "/" && (
+              <chakra.h1
+                fontSize="lg"
+                fontWeight="bold"
+              >
+                Dev Sahaaya
+              </chakra.h1>
+            )}
           </Flex>
           <Flex>
             <HStack spacing="5">
