@@ -4,6 +4,7 @@ import {
   Flex,
   HStack,
   Icon,
+  Img,
   IconButton,
   Link as ChakraLink,
   useColorMode,
@@ -12,6 +13,7 @@ import {
 import React from "react";
 import { siteConfig } from "utils/siteconfig";
 import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 const GithubIcon = (props: React.ComponentProps<"svg">) => (
   <svg viewBox="0 0 20 20" {...props}>
@@ -24,9 +26,10 @@ const GithubIcon = (props: React.ComponentProps<"svg">) => (
 
 export const Header: React.FC = (props) => {
   const { toggleColorMode: toggleMode } = useColorMode();
+  const { pathname } = useRouter();
   const text = useColorModeValue("dark", "light");
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
-  const bg = useColorModeValue("#fbfbfb", "gray.800")
+  const bg = useColorModeValue("#fbfbfb", "gray.800");
 
   return (
     <chakra.header
@@ -41,23 +44,38 @@ export const Header: React.FC = (props) => {
       px={6}
       {...props}
     >
-      <chakra.div
-        height="4rem"
-        mx="auto"
-        maxW="8xl"
-      >
+      <chakra.div height="4rem" mx="auto" maxW="8xl">
         <Flex
           w="100%"
           h="100%"
           align="center"
           justify="space-between"
         >
-          <chakra.h1
-            fontSize="lg"
-            fontWeight="bold"
-          >
-            <Link href="/">{`{...💻Dev Sahaaya}`}</Link>
-          </chakra.h1>
+          <Flex align="center">
+            <ChakraLink href="/" as={Link} passHref>
+              <React.Fragment>
+                <Img
+                  src={`/logo/logo.png`}
+                  width={65}
+                  height={50}
+                  alt="Dev Sahaaya Logo"
+                  cursor="pointer"
+                  style={{
+                    transform: "rotate(-25deg)",
+                  }}
+                />
+                {pathname !== "/" && (
+                  <chakra.h1
+                    fontSize="lg"
+                    fontWeight="bold"
+                    cursor="pointer"
+                  >
+                    Dev Sahaaya
+                  </chakra.h1>
+                )}
+              </React.Fragment>
+            </ChakraLink>
+          </Flex>
           <Flex>
             <HStack spacing="5">
               <ChakraLink

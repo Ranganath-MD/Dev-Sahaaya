@@ -59,8 +59,9 @@ const ContentDisplay = ({
           />
         </chakra.div>
         <chakra.div
-          p="6"
-          fontSize="md"
+          px={[ 0, 0, 6 ]}
+          py={6}
+          fontSize={["sm", "md"]}
           fontFamily="Inter"
           width={["100%"]}
         >
@@ -94,6 +95,7 @@ export const getStaticProps: GetStaticProps =
     const resources = getAllResources();
     const { content, data } = resource;
     const mdxSource = await serialize(content, {
+      // No plugins are added yet
       mdxOptions: {
         remarkPlugins: [],
         rehypePlugins: [],
