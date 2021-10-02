@@ -16,16 +16,6 @@ export default class MyDocument extends Document {
             rel="icon"
             href="/logo/logo.png"
           />
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: #fbfbfb)"
-            content="white"
-          />
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: #1a202c)"
-            content="black"
-          />
         </Head>
         <body>
           <Main />
