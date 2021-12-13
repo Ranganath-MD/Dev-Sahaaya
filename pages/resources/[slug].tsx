@@ -22,6 +22,7 @@ import {
   Sidebar,
   MDXListItem,
   Quotes,
+  Credit,
 } from "components/mdxComponents";
 import { Seo } from "components/seo/Seo";
 
@@ -32,6 +33,7 @@ const components = {
   li: MDXListItem,
   Head,
   blockquote: Quotes,
+  span: Credit
 };
 
 const ContentDisplay = ({
