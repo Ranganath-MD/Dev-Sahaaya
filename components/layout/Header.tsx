@@ -30,7 +30,7 @@ export const Header: React.FC = (props) => {
   const { pathname } = useRouter();
   const text = useColorModeValue("dark", "light");
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
-  const bg = useColorModeValue("#fbfbfb", "gray.800");
+  const bg = useColorModeValue("#fbfbfb", "#0e0e0e");
 
   return (
     <chakra.header

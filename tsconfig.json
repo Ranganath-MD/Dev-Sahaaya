@@ -20,13 +20,15 @@
     "typeRoots": [
       "types"
     ],
-    "strict": false
+    "strict": false,
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, ".next/ColorLine.tsx"  ],
+    "**/*.tsx",
+    ".next/ColorLine.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]

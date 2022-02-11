@@ -2,8 +2,7 @@ export const Button = {
   baseStyle: {
     fontWeight: "bold",
     borderRadius: "base",
-    _focus: { boxShadow: "none",  },
-    
+    _focus: { boxShadow: "none" },
   },
   sizes: {
     sm: {
@@ -23,22 +22,23 @@ export const Button = {
       bg: "linear-gradient( to right,#753a88,#cc2b5e )",
       color: "white",
       _hover: {
-        bg: "linear-gradient( to left,#753a88,#cc2b5e )"
+        bg: "linear-gradient( to left,#753a88,#cc2b5e )",
       },
       _active: {
         transform: "scale(0.98)",
-        background: "linear-gradient( to left,#753a88,#cc2b5e )"
-      }
+        background:
+          "linear-gradient( to left,#753a88,#cc2b5e )",
+      },
     },
   },
   defaultProps: {
     size: "md",
-    variants: "solid"
+    variants: "solid",
   },
 };
 
 export const Heading = {
   baseStyle: {
-    fontFamily: "Arvo"
+    fontFamily: "'IBM Plex Sans Thai Looped', sans-serif",
   },
-}
+};

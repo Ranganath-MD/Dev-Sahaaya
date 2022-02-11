@@ -55,22 +55,15 @@ const ContentDisplay = ({
           width={["0", "0", "20%"]}
           display={["none", "none", "block"]}
         >
-          <Sidebar
-            variant="left"
-            resources={resources}
-          />
+          <Sidebar variant="left" resources={resources} />
         </chakra.div>
         <chakra.div
-          px={[ 0, 0, 6 ]}
+          px={[0, 0, 6]}
           py={6}
           fontSize={["sm", "md"]}
-          fontFamily="Inter"
           width={["100%"]}
         >
-          <MDXRemote
-            {...source}
-            components={components}
-          />
+          <MDXRemote {...source} components={components} />
         </chakra.div>
         <chakra.div
           pos="sticky"

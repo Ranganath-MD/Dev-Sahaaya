@@ -8,14 +8,14 @@ export const Theme = extendTheme({
     global: (props: Dict<any>) => ({
       body: {
         color: mode("gray.800", "white")(props),
-        bg: mode("#fbfbfb", "gray.800")(props),
+        bg: mode("#fbfbfb", "#0e0e0e")(props),
         lineHeight: "base",
-        fontFamily: "Arvo"
+        fontFamily:
+          "'IBM Plex Sans Thai Looped', sans-serif",
       },
       li: {
-        listStyle: "none"
+        listStyle: "none",
       },
-
     }),
   },
   components: {

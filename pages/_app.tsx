@@ -6,10 +6,6 @@ import { DefaultSeo } from "next-seo";
 import { seoConfig } from "components/seo/seo.config";
 import Script from "next/script";
 
-import "@fontsource/arvo";
-import "@fontsource/arvo/700.css";
-import "@fontsource/inter";
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
