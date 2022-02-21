@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           <Button
             rightIcon={<ArrowForwardIcon />}
             onClick={() =>
-              router.push("/resources")
+              router.push("/resources/javascript")
             }
           >
             Resources
