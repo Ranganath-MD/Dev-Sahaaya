@@ -20,6 +20,6 @@ export const Theme = extendTheme({
   },
   components: {
     Button,
-    Heading,
+    Heading
   },
 });
